@@ -7,6 +7,7 @@ import {
 import React, { useState } from "react";
 import Logo from "../../../assets/images/fmcklogo.png";
 import CustomInput from "../../components/CustomInput";
+import CustomButton from "../../components/CustomButton";
 
 const SigninScreen = () => {
   const [username, setUsername] = useState("");
@@ -33,6 +34,7 @@ const SigninScreen = () => {
         secureTextEntry
         
       />
+      <CustomButton />
     </View>
   );
 };
