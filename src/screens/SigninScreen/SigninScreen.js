@@ -54,6 +54,7 @@ const SigninScreen = () => {
         text="Sign In"
         onPress={onSignInPressed}
         type="TERTIARY"
+        fgColor="#ffff"
       />
       <CustomButton
         text="Sign Up"
