@@ -14,6 +14,14 @@ const SigninScreen = () => {
   const [password, setPassword] = useState("");
 
   const { height } = useWindowDimensions();
+
+  const onSignInPressed = () => {
+    console.warn('Sign In Press');
+  }
+
+
+
+
   return (
     <View style={styles.root}>
       <Image
@@ -34,7 +42,7 @@ const SigninScreen = () => {
         secureTextEntry
         
       />
-      <CustomButton />
+      <CustomButton text="Sign Up" onPress={onSignInPressed}/>
     </View>
   );
 };
