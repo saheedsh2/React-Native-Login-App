@@ -1,9 +1,4 @@
-import {
-  View,
-  Image,
-  StyleSheet,
-  useWindowDimensions,
-} from "react-native";
+import { View, Image, StyleSheet, ScrollView, useWindowDimensions } from "react-native";
 import React, { useState } from "react";
 import Logo from "../../../assets/images/fmcklogo.png";
 import CustomInput from "../../components/CustomInput";
@@ -16,13 +11,27 @@ const SigninScreen = () => {
   const { height } = useWindowDimensions();
 
   const onSignInPressed = () => {
-    console.warn('Sign In Press');
-  }
+    console.warn("Sign In Press");
+  };
 
+  const onSignUpPressed = () => {
+    console.warn("signUp Pressed");
+  };
 
+  const onForgotPasswordPressed = () => {
+    console.warn("Forgot Password Pressed");
+  };
 
+  const onSignInFacebookPressed = () => {
+    console.warn("Sign In With Facebook");
+  };
+
+  const onSignInGooglePressed = () => {
+    console.warn("Sign In With Google");
+  };
 
   return (
+    <ScrollView showsVerticalScrollIndicator={false}>
     <View style={styles.root}>
       <Image
         source={Logo}
@@ -40,10 +49,39 @@ const SigninScreen = () => {
         value={password}
         setValue={setPassword}
         secureTextEntry
-        
       />
-      <CustomButton text="Sign Up" onPress={onSignInPressed}/>
+      <CustomButton
+        text="Sign In"
+        onPress={onSignInPressed}
+        type="TERTIARY"
+      />
+      <CustomButton
+        text="Sign Up"
+        onPress={onSignUpPressed}
+        bgColor="#E7EAF4"
+        fgColor="#4765A9"
+      />
+      <CustomButton
+        text="Forgot Password"
+        onPress={onForgotPasswordPressed}
+        bgColor="#e3e3e3"
+        fgColor="#363636"
+      />
+      <CustomButton
+        text="Sign In With Facebook"
+        onPress={onSignInFacebookPressed}
+        bgColor="#FAE9EA"
+        fgColor="#DD4D44"
+      />
+
+      <CustomButton
+        text="Sign In With Google"
+        onPress={onSignInGooglePressed}
+        bgColor="#61b897"
+        fgColor="#0e5c3e"
+      />
     </View>
+    </ScrollView>
   );
 };
 
