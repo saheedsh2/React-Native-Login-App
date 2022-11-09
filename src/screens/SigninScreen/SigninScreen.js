@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Logo from "../../../assets/images/fmcklogo.png";
 import CustomInput from "../../components/CustomInput";
 import CustomButton from "../../components/CustomButton";
+import SocialSignInButton from "../../components/SocialSignInButtons/SocialSignInButton";
 
 const SigninScreen = () => {
   const [username, setUsername] = useState("");
@@ -68,19 +69,9 @@ const SigninScreen = () => {
         bgColor="#e3e3e3"
         fgColor="#363636"
       />
-      <CustomButton
-        text="Sign In With Facebook"
-        onPress={onSignInFacebookPressed}
-        bgColor="#FAE9EA"
-        fgColor="#DD4D44"
-      />
 
-      <CustomButton
-        text="Sign In With Google"
-        onPress={onSignInGooglePressed}
-        bgColor="#61b897"
-        fgColor="#0e5c3e"
-      />
+      <SocialSignInButton />
+
     </View>
     </ScrollView>
   );

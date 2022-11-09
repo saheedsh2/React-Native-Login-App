@@ -4,8 +4,8 @@ import CustomInput from "../../components/CustomInput";
 import CustomButton from "../../components/CustomButton";
 import SocialSignInButton from "../../components/SocialSignInButtons/SocialSignInButton";
 
-const SignUpScreen = () => {
-  const [username, setUsername] = useState("");
+const ConfirmEmailScreen = () => {
+  const [code, setCode] = useState("");
   const [email, setEmail] = useState("");
 
   const [password, setPassword] = useState("");
@@ -15,8 +15,8 @@ const SignUpScreen = () => {
     console.warn("Sign In Press");
   };
 
-  const onSignUpPressed = () => {
-    console.warn("signUp Pressed");
+  const onResendCode = () => {
+    console.warn("Resend Pressed");
   };
 
 
@@ -32,55 +32,43 @@ const SignUpScreen = () => {
   return (
     <>
       <View style={styles.root}>
-        <Text style={styles.title}>Create An Account</Text>
+        <Text style={styles.title}>Confirm Your Email</Text>
 
         <CustomInput
-          placeholder="Enter Username"
-          value={username}
-          setValue={setUsername}
-          secureTextEntry={false}
-        />
-
-        <CustomInput
-          placeholder="Enter Email"
-          value={email}
-          setValue={setEmail}
-          secureTextEntry={false}
-        />
-        <CustomInput
-          placeholder="Enter Password"
-          value={password}
-          setValue={setPassword}
-          secureTextEntry
-        />
-
-        <CustomInput
-          placeholder="Repeat Password"
-          value={passwordRepeat}
-          setValue={setPasswordRepeat}
-          secureTextEntry
+          style={styles.code}
+          placeholder="Enter Confirmation Code"
+          value={code}
+          setValue={setCode}
         />
 
         <CustomButton
-          text="Have an Account? Sign In"
+          text="Confirm"
           onPress={onSignInPressed}
           type="TERTIARY"
           fgColor="#ffff"
         />
+
         <CustomButton
-          text="Register"
-          onPress={onSignUpPressed}
-          bgColor="#E7EAF4"
-          fgColor="#4765A9"
+          text="Back To Sign In"
+          onPress={onSignInPressed}
+          type="PRIMARY"
+          fgColor="#ffff"
         />
+
+
+        <CustomButton
+          text="Resend Code"
+          onPress={onResendCode}
+          type="SECONDARY"
+          fgColor="#ffff"
+        />
+ 
    
         <Text style={styles.text}>
           By Registering, You Confirm That You Accept Our{" "}
           <Text style={styles.link} onPress={onTermsofUse}>Terms of Use </Text>and{" "}
           <Text style={styles.privacy} onPress={onPrivacy}>Privacy Policy</Text>
         </Text>
-
-        <SocialSignInButton />
    
            </View>
     </>
@@ -91,6 +79,7 @@ const styles = StyleSheet.create({
   root: {
     alignItems: "center",
     padding: 20,
+    marginTop: 25,
   },
   logo: {
     width: "50%",
@@ -115,7 +104,8 @@ const styles = StyleSheet.create({
   },
   privacy:{
     color: 'red'
-  }
+  }, 
+
 });
 
-export default SignUpScreen;
+export default ConfirmEmailScreen;
