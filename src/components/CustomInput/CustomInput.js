@@ -20,12 +20,12 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "white",
     width: "100%",
-    height: "14%",
+    height: "10%",
     borderColor: "#e8e8e8",
     borderWidth: 1,
     borderRadius: 5,
-    paddingHorizontal: 15,
-    marginVertical: 5,
+    paddingHorizontal: 20,
+    marginVertical: 12,
   },
   input: {},
 });

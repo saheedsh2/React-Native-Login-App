@@ -4,32 +4,34 @@ import Logo from "../../../assets/images/fmcklogo.png";
 import CustomInput from "../../components/CustomInput";
 import CustomButton from "../../components/CustomButton";
 import SocialSignInButton from "../../components/SocialSignInButtons/SocialSignInButton";
+import { useNavigation } from "@react-navigation/native";
+
+
 
 const SigninScreen = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   const { height } = useWindowDimensions();
+  const navigation = useNavigation();
 
   const onSignInPressed = () => {
     console.warn("Sign In Press");
+    // validate 
+    navigation.navigate('HomeScreen');
+    
   };
 
   const onSignUpPressed = () => {
-    console.warn("signUp Pressed");
+    console.warn("sign Up Pressed");
+    navigation.navigate('SignUp');
   };
 
   const onForgotPasswordPressed = () => {
-    console.warn("Forgot Password Pressed");
+    navigation.navigate('ForgotPassword');
   };
 
-  const onSignInFacebookPressed = () => {
-    console.warn("Sign In With Facebook");
-  };
 
-  const onSignInGooglePressed = () => {
-    console.warn("Sign In With Google");
-  };
 
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
