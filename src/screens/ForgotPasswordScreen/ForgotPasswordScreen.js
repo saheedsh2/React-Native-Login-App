@@ -30,12 +30,12 @@ const ForgotPasswordScreen = () => {
   }
 
   return (
-    <>
+    <ScrollView>
       <View style={styles.root}>
         <Text style={styles.title}>Reset Your Password</Text>
 
         <CustomInput
-          style={{height:'20%'}}
+
           placeholder="Enter Username"
           value={username}
           setValue={setUsername}
@@ -54,6 +54,20 @@ const ForgotPasswordScreen = () => {
           type="PRIMARY"
           fgColor="#ffff"
         />
+           <CustomButton
+          text="Back To Home"
+          onPress={onSignInPressed}
+          type="SECONDARY"
+          fgColor="#ffff"
+        />
+
+      <CustomButton
+          text="Sign Up"
+          onPress={onSignInPressed}
+          type="TERTIARY"
+          fgColor="#ffff"
+        />
+
 
    
         <Text style={styles.text}>
@@ -63,7 +77,7 @@ const ForgotPasswordScreen = () => {
         </Text>
    
            </View>
-    </>
+    </ScrollView>
   );
 };
 
@@ -73,21 +87,16 @@ const styles = StyleSheet.create({
     padding: 20,
     marginTop: 25,
   },
-  logo: {
-    width: "50%",
-    maxWidth: 300,
-    maxHeight: 200,
-    height: 100,
-  },
+
   title: {
     fontSize: 24,
     fontWeight: "bold",
     color: "#851C60",
-    margin: 10,
+    margin: 29,
   },
   text:{
     color: 'gray',
-    marginVertical: 10,
+    marginVertical: 5,
 
   },
   link:{

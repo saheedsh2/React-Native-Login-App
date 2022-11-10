@@ -23,12 +23,7 @@ const SocialSignInButton = () => {
         fgColor="#DD4D44"
       />
 
-      <CustomButton
-        text="Sign In With Google"
-        onPress={onSignInGooglePressed}
-        bgColor="#61b897"
-        fgColor="#0e5c3e"
-      />
+
     </>
   )
 }
