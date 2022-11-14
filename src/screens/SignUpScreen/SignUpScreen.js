@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import CustomInput from "../../components/CustomInput";
 import CustomButton from "../../components/CustomButton";
 import SocialSignInButton from "../../components/SocialSignInButtons/SocialSignInButton";
+import { useNavigation } from "@react-navigation/native";
 
 const SignUpScreen = () => {
   const [username, setUsername] = useState("");
@@ -11,12 +12,15 @@ const SignUpScreen = () => {
   const [password, setPassword] = useState("");
   const [passwordRepeat, setPasswordRepeat] = useState("");
 
+  const navigation = useNavigation();
+
   const onSignInPressed = () => {
     console.warn("Sign In Press");
   };
 
   const onSignUpPressed = () => {
     console.warn("signUp Pressed");
+    navigation.navigate("ConfirmEmail");
   };
 
 

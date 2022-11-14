@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import CustomInput from "../../components/CustomInput";
 import CustomButton from "../../components/CustomButton";
 import SocialSignInButton from "../../components/SocialSignInButtons/SocialSignInButton";
+import { useNavigation } from "@react-navigation/native";
 
 const ConfirmEmailScreen = () => {
   const [code, setCode] = useState("");
@@ -11,8 +12,11 @@ const ConfirmEmailScreen = () => {
   const [password, setPassword] = useState("");
   const [passwordRepeat, setPasswordRepeat] = useState("");
 
+  const navigation = useNavigation();
+
   const onSignInPressed = () => {
     console.warn("Sign In Press");
+    navigation.navigate('SignIn');
   };
 
   const onResendCode = () => {

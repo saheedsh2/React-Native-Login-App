@@ -20,13 +20,13 @@ const NewPasswordScreen = () => {
 
 
 
-  const onTermsofUse = () => {
-    console.warn('On Terms of Use Pressed');
-  }
+  // const onTermsofUse = () => {
+  //   console.warn('On Terms of Use Pressed');
+  // }
 
-  const onPrivacy = () => {
-    console.warn('On Privacy Press');
-  }
+  // const onPrivacy = () => {
+  //   console.warn('On Privacy Press');
+  // }
 
   return (
     <>
@@ -47,7 +47,7 @@ const NewPasswordScreen = () => {
         />
 
         <CustomButton
-          text="Send"
+          text="Submit"
           onPress={onSubmitPressed}
           type="TERTIARY"
           fgColor="#ffff"

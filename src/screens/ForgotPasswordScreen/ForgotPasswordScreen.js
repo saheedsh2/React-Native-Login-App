@@ -1,18 +1,20 @@
-import { View, Text, StyleSheet, ScrollView } from "react-native";
+import { View, Text, StyleSheet, ScrollView,StatusBar } from "react-native";
 import React, { useState } from "react";
 import CustomInput from "../../components/CustomInput";
 import CustomButton from "../../components/CustomButton";
 import SocialSignInButton from "../../components/SocialSignInButtons/SocialSignInButton";
+import { useNavigation } from "@react-navigation/native";
+
 
 const ForgotPasswordScreen = () => {
   const [username, setUsername] = useState("");
-  
-
   const [password, setPassword] = useState("");
   const [passwordRepeat, setPasswordRepeat] = useState("");
 
+  const navigation = useNavigation();
+
   const onSignInPressed = () => {
-    console.warn("Sign In Press");
+    navigation.navigate("SignIn");
   };
 
   const onSendPressed = () => {
@@ -31,6 +33,7 @@ const ForgotPasswordScreen = () => {
 
   return (
     <ScrollView>
+      <StatusBar backgroundColor="black"/>
       <View style={styles.root}>
         <Text style={styles.title}>Reset Your Password</Text>
 
@@ -61,12 +64,7 @@ const ForgotPasswordScreen = () => {
           fgColor="#ffff"
         />
 
-      <CustomButton
-          text="Sign Up"
-          onPress={onSignInPressed}
-          type="TERTIARY"
-          fgColor="#ffff"
-        />
+
 
 
    
