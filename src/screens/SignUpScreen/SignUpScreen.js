@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, ScrollView } from "react-native";
+import { View, Text, StyleSheet, ScrollView, useWindowDimensions } from "react-native";
 import React, { useState } from "react";
 import CustomInput from "../../components/CustomInput";
 import CustomButton from "../../components/CustomButton";
@@ -12,10 +12,12 @@ const SignUpScreen = () => {
   const [password, setPassword] = useState("");
   const [passwordRepeat, setPasswordRepeat] = useState("");
 
+  const { height } = useWindowDimensions();
+
   const navigation = useNavigation();
 
   const onSignInPressed = () => {
-    console.warn("Sign In Press");
+    navigation.navigate("SignIn");
   };
 
   const onSignUpPressed = () => {
@@ -43,6 +45,7 @@ const SignUpScreen = () => {
           value={username}
           setValue={setUsername}
           secureTextEntry={false}
+          style={{height: height * 0.3}}
         />
 
         <CustomInput
