@@ -5,6 +5,7 @@ import {
   ScrollView,
   useWindowDimensions,
   TextInput,
+  Text
 } from "react-native";
 import React, { useState } from "react";
 import Logo from "../../../assets/images/fmcklogo.png";
@@ -22,7 +23,7 @@ const SigninScreen = () => {
   const onSignInPressed = (data) => {
     console.log(data);
     // validate
-    navigation.navigate("HomeScreen");
+    // navigation.navigate("HomeScreen");
   };
 
   const onSignUpPressed = () => {
@@ -37,39 +38,25 @@ const SigninScreen = () => {
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.root}>
+        <Text>Sign In Screen</Text>
         <Image
           source={Logo}
           style={[styles.logo, { height: height * 0.3 }]}
           resizeMode="contain"
         />
 
-        <Controller
-          control={control}
-          name="username"
-          render={({ field: { value, onChange, onBlur } }) => {
-            <TextInput
-              placeholder="Username"
-              value={value}
-              onChangeText={onChange}
-              onBlur={onBlur}
-            />;
-          }}
-        />
 
-        <TextInput placeholder="Password" />
-
-        {/* <CustomInput
-        placeholder="Enter Email"
-        value={username}
-        setValue={setUsername}
-        secureTextEntry={false}
+      <CustomInput
+        placeholder="Username"
+        name="username"
+        control={control}
       />
       <CustomInput
         placeholder="Enter Password"
-        value={password}
-        setValue={setPassword}
+        name="password"
+        control={control}
         secureTextEntry
-      /> */}
+      />
         <CustomButton
           text="Sign In"
           onPress={onSignInPressed}
